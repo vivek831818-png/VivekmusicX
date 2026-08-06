@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MusicX</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="header">
+    <h1>MusicX</h1>
+    <input type="text" placeholder="Search Songs..." class="search">
+</div>
+
+<div class="banner">
+    <h2>Discover Music</h2>
+    <p>Feel Every Beat ❤️</p>
+</div>
+
+<div class="title">
+Trending
+</div>
+
+<div class="song">
+    <img src="https://picsum.photos/100?1">
+    <div>
+        <h3>Tum Hi Ho</h3>
+        <p>Arijit Singh</p>
+    </div>
+    <i class="fa-solid fa-play"></i>
+</div>
+
+<div class="song">
+    <img src="https://picsum.photos/100?2">
+    <div>
+        <h3>Zara Sa</h3>
+        <p>KK</p>
+    </div>
+    <i class="fa-solid fa-play"></i>
+</div>
+
+<div class="song">
+    <img src="https://picsum.photos/100?3">
+    <div>
+        <h3>Perfect</h3>
+        <p>Ed Sheeran</p>
+    </div>
+    <i class="fa-solid fa-play"></i>
+</div>
+
+<div class="bottom">
+    <div><i class="fa-solid fa-house"></i></div>
+    <div><i class="fa-solid fa-magnifying-glass"></i></div>
+    <div><i class="fa-solid fa-heart"></i></div>
+    <div><i class="fa-solid fa-user"></i></div>
+</div>
+
+<div class="player">
+
+    <img id="cover" src="https://picsum.photos/70">
+
+    <div class="info">
+        <h3 id="title">No Song Playing</h3>
+        <p id="artist">Select Song</p>
+    </div>
+
+    <button id="play">▶</button>
+
+</div>
+
+<audio id="audio">
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script src="songs.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
