@@ -26,35 +26,10 @@
 </div>
 
 <div class="title">
-Trending
+    Trending
 </div>
 
-<div class="song">
-    <img src="https://picsum.photos/100?1">
-    <div>
-        <h3>Tum Hi Ho</h3>
-        <p>Arijit Singh</p>
-    </div>
-    <i class="fa-solid fa-play"></i>
-</div>
-
-<div class="song">
-    <img src="https://picsum.photos/100?2">
-    <div>
-        <h3>Zara Sa</h3>
-        <p>KK</p>
-    </div>
-    <i class="fa-solid fa-play"></i>
-</div>
-
-<div class="song">
-    <img src="https://picsum.photos/100?3">
-    <div>
-        <h3>Perfect</h3>
-        <p>Ed Sheeran</p>
-    </div>
-    <i class="fa-solid fa-play"></i>
-</div>
+<div id="songList"></div>
 
 <div class="bottom">
     <div><i class="fa-solid fa-house"></i></div>
@@ -72,14 +47,15 @@ Trending
         <p id="artist">Select Song</p>
     </div>
 
-    <button id="play">▶</button>
+    <div class="controls">
+        <button id="prev">⏮</button>
+        <button id="play">▶</button>
+        <button id="next">⏭</button>
+    </div>
 
 </div>
 
-<audio id="audio">
-    <source src="song.mp3" type="audio/mpeg">
-</audio>
-
+<audio id="audio"></audio>
 
 <script src="script.js"></script>
 
