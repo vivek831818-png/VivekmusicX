@@ -1,62 +1,52 @@
-const songs = [
-{
-title:"Song 1",
-artist:"Unknown",
-src:"assets/songs/song1.mp3",
-cover:"assets/covers/cover1.jpg"
-},
-{
-title:"Song 2",
-artist:"Unknown",
-src:"assets/songs/song2.mp3",
-cover:"assets/covers/cover2.jpg"
-},
-{
-title:"Song 3",
-artist:"Unknown",
-src:"assets/songs/song3.mp3",
-cover:"assets/covers/cover3.jpg"
-},
-{
-title:"Song 4",
-artist:"Unknown",
-src:"assets/songs/song4.mp3",
-cover:"assets/covers/cover4.jpg"
-},
-{
-title:"Song 5",
-artist:"Unknown",
-src:"assets/songs/song5.mp3",
-cover:"assets/covers/cover5.jpg"
-},
-{
-title:"Song 6",
-artist:"Unknown",
-src:"assets/songs/song6.mp3",
-cover:"assets/covers/cover6.jpg"
-},
-{
-title:"Song 7",
-artist:"Unknown",
-src:"assets/songs/song7.mp3",
-cover:"assets/covers/cover7.jpg"
-},
-{
-title:"Song 8",
-artist:"Unknown",
-src:"assets/songs/song8.mp3",
-cover:"assets/covers/cover8.jpg"
-},
-{
-title:"Song 9",
-artist:"Unknown",
-src:"assets/songs/song9.mp3",
-cover:"assets/covers/cover9.jpg"
-},
-{
-title:"Song 10",
-artist:"Unknown",
-src:"assets/songs/song10.mp3",
-cover:"assets/covers/cover10.jpg"
+const audio = document.getElementById("audio");
+const play = document.getElementById("play");
+const title = document.getElementById("title");
+const artist = document.getElementById("artist");
+const cover = document.getElementById("cover");
+
+const CLIENT_ID = "a7a994c0";
+
+let songs = [];
+let currentSong = 0;
+
+async function loadOnlineSongs() {
+
+    const res = await fetch(
+        `https://api.jamendo.com/v3.0/tracks/?client_id=${CLIENT_ID}&format=json&limit=20`
+    );
+
+    const data = await res.json();
+
+    songs = data.results;
+
+    loadSong(0);
 }
-];
+
+loadOnlineSongs();
+
+function loadSong(index) {
+
+    currentSong = index;
+
+    audio.src = songs[index].audio;
+    audio.load();
+
+    title.textContent = songs[index].name;
+    artist.textContent = songs[index].artist_name;
+    cover.src = songs[index].image;
+}
+
+play.onclick = function () {
+
+    if (audio.paused) {
+
+        audio.play();
+        play.innerHTML = "⏸";
+
+    } else {
+
+        audio.pause();
+        play.innerHTML = "▶";
+
+    }
+};
